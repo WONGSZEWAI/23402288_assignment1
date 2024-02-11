@@ -14,6 +14,11 @@ def clean(input1, input2, output):
 
     merged_data.to_csv(output, index=False)
 
+    output_data = pd.read_csv(output)
+    num_rows = output_data.shape[0]
+    num_columns = output_data.shape[1]
+    print(f"Output file shape: Rows={num_rows}, Columns={num_columns}")
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('input1', help='respondent_contact.csv file')
